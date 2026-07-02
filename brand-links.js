@@ -3,7 +3,7 @@
   const BRAND_LINKS = {
     levis: 'https://levi.co.kr',
     orslow: 'https://www.orslow.jp',
-    warehouse: 'https://www.warehouseandco.com',
+    warehouse: 'https://ware-house.co.kr',
     fullcount: 'https://fullcount-online.com',
     ironheart: 'https://www.ironheartamerica.com',
     uniformbridge: 'https://uniformbridge.co.kr',
@@ -13,7 +13,7 @@
     beamsplus: 'https://www.beams.co.jp',
     engineeredgarments: 'https://engineeredgarments.com',
     outstanding: 'https://www.musinsa.com/brands/outstanding',
-    carhartt: 'https://www.carhartt-wip.com',
+    carhartt: 'https://www.carhartt-wip.co.kr',
     frizmworks: 'https://www.musinsa.com/brands/frizmworks',
     stussy: 'https://www.stussy.com',
     needles: 'https://www.musinsa.com/brands/needles',
