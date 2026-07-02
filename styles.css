@@ -834,7 +834,37 @@ ul { list-style: none; }
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding: 20px 16px;
+  padding: 20px 16px 28px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  font: inherit;
+  color: inherit;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.outfit-card__visual:hover {
+  background: #1a1a1a;
+}
+
+.outfit-card__visual:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: -2px;
+}
+
+.outfit-card__visual-hint {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.55);
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 .outfit-piece { border-radius: 2px; }
@@ -898,6 +928,130 @@ ul { list-style: none; }
   font-size: 0.78rem;
   font-weight: 600;
   color: var(--black);
+}
+
+/* ---- Outfit Modal ---- */
+body.outfit-modal-open { overflow: hidden; }
+
+.outfit-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.outfit-modal[hidden] { display: none; }
+
+.outfit-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+}
+
+.outfit-modal__dialog {
+  position: relative;
+  width: min(720px, 100%);
+  max-height: min(90vh, 820px);
+  overflow-y: auto;
+  background: var(--white);
+  padding: 32px 28px 28px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.25);
+}
+
+.outfit-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.outfit-modal__close:hover { color: var(--black); }
+
+.outfit-modal__label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--red);
+  margin-bottom: 6px;
+}
+
+.outfit-modal__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  padding-right: 32px;
+}
+
+.outfit-modal__note {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+.outfit-modal__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.outfit-modal__item { margin: 0; }
+
+.outfit-modal__thumb {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--bg-subtle);
+  margin-bottom: 10px;
+}
+
+.outfit-modal__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.outfit-modal__slot {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--red);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.outfit-modal__name {
+  display: block;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+@media (max-width: 640px) {
+  .outfit-modal { padding: 16px; }
+
+  .outfit-modal__dialog { padding: 24px 18px 20px; }
+
+  .outfit-modal__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .outfit-modal__thumb {
+    aspect-ratio: 16 / 10;
+  }
 }
 
 /* ---- Brand Cards ---- */
